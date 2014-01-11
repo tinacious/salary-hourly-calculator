@@ -6,6 +6,8 @@ It does not take into account benefits or other types of compensation but rather
 
 It takes into account vacation time as well.
 
+Check it out [here](http://tinacious.github.io/salary-hourly-calculator).
+
 ![](screenshot-hourly.png)
 ![](screenshot-salary.png)
 
