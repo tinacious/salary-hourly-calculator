@@ -8,3 +8,5 @@ It takes into account vacation time as well.
 
 ![](screenshot-hourly.png)
 ![](screenshot-salary.png)
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/tinacious/salary-hourly-calculator/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
