@@ -1,0 +1,243 @@
+@import "compass";
+@import "normalize";
+@import "susy";
+
+$fa-font-path: "../bower_components/font-awesome/fonts";
+@import "font-awesome/scss/font-awesome";
+
+$lightGrey: #efefef;
+$grey: #666;
+$darkGrey: #4c4c4c;
+$pink: #ff3399;
+
+body {
+  color: $darkGrey;
+  -webkit-font-smoothing: antialiased;
+  font-family: proxima-nova, 'helvetica neue', arial, sans-serif;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+#{headings()} {
+  margin: 0;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+
+  &.tab {
+    background: $pink;
+    color: #fff;
+    font-weight: 700;
+    display: block;
+    padding: 5px 10px;
+
+    i {
+      float: right;
+      padding-top: 0.15em;
+    }
+  }
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 10px;
+  @include clearfix;
+
+  // @include susy-grid-background;
+}
+
+.app-header,
+.app-footer {
+  background: $darkGrey;
+  color: #fff;
+  padding: 5px 0;
+  text-align: center;
+
+  a {
+    color: #fff;
+  }
+}
+
+// .app-header {
+//   margin-bottom: 5px;
+// }
+
+.nav-primary {
+    background: $pink;
+    text-align: center;
+    margin-bottom: 15px;
+
+    .container {
+        width: 100%;
+        display: table;
+    }
+
+    a {
+        display: table-cell;
+        font-weight: 700;
+        padding: 0.5em 0;
+        color: #fff;
+
+        &.active {
+            background: #fff;
+            color: $pink;
+        }
+    }
+}
+
+.app-footer {
+  margin-top: 5px;
+  padding: 10px 0 40px;
+
+  img {
+    display: inline-block;
+    width: 30px;
+    margin-right: 5px;
+  }
+
+  span {
+    line-height: 30px;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  .tinacious-design-link {
+    display: block;
+    padding-bottom: 10px;
+  }
+
+  label {
+    text-align: left;
+  }
+
+  .social {
+    i {
+      font-size: 1.1em;
+      margin: 0 10px;
+    }
+  }
+}
+
+label {
+  padding: 10px 0;
+  display: block;
+}
+
+input {
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  color: $darkGrey;
+
+  &:focus {
+    outline: none;
+  }
+
+  &[type="text"],
+  &[type="number"],
+  &[type="tel"] {
+    -webkit-appearance: none;
+    padding: 3px 5px;
+    border: 2px solid $lightGrey;
+    border-radius: 2px;
+
+    &:focus {
+      border-color: $pink;
+    }
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button, {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+// HTML5 range slider styles
+input[type="range"] {
+  padding: 0.7em 0 0;
+  background: none;
+  border: 0;
+  border-bottom: 3px solid darken($lightGrey,10%);
+  height: 1px;
+  -webkit-appearance: none;
+  border-radius: 0px;
+    outline: none;
+
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: $pink;
+    margin-top: 0.2em;
+    border-color: $pink;
+
+    &:hover,
+    &:active {
+      background: $pink;
+      cursor: pointer;
+    }
+  }
+}
+
+fieldset {
+  border: 0;
+  padding: 5px 0;
+
+  p {
+    margin: 1em 0;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  &.split-cols {
+
+    label {
+      @include span-columns(8,12);
+    }
+
+    p {
+      @include span-columns(4 omega,12);
+      text-align: right;
+      margin: 10px 0;
+    }
+  }
+}
+
+.field-prepended {
+  position: relative;
+
+  input {
+    padding-left: 22px;
+  }
+
+  span {
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    color: lighten($grey,20%);
+  }
+
+  .split-cols & {
+    @include span-columns(4 omega,12);
+  }
+}
+
+
+@media screen and (min-width: 480px) {
+  fieldset {
+    @include span-columns(8,12);
+    @include push(2);
+  }
+}
