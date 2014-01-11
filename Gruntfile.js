@@ -147,7 +147,13 @@ module.exports = function (grunt) {
       }
     },
 
-
+    // gh-pages
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
+    },
 
 
     // Compiles Sass to CSS and generates necessary files if requested
@@ -404,4 +410,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-gh-pages');
 };
