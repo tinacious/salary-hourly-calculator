@@ -150,7 +150,8 @@ module.exports = function (grunt) {
     // gh-pages
     'gh-pages': {
       options: {
-        base: 'dist'
+        base: 'dist',
+        noJekyll: true
       },
       src: ['**']
     },
